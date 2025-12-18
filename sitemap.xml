@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://pokepayguide.top/</loc>
+    <lastmod>2025-12-10T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://pokepayguide.top/images/og-cover.png</image:loc>
+      <image:caption>Pokepay 指南封面图</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://pokepayguide.top/articles/pokepay-kaopu-ma.html</loc>
+    <lastmod>2025-12-10T12:00:00Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pokepayguide.top/images/compliance-licenses.png</image:loc>
+      <image:caption>合规保障示意：美国/加拿大 MSB 与香港 MSO</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pokepayguide.top/images/security-overview.png</image:loc>
+      <image:caption>安全保障示意：高性能架构与多层次防护</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://pokepayguide.top/articles/pokepay-virtual-card-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pokepayguide.top/articles/okx-usdt-topup-trc20.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pokepayguide.top/articles/subscription-failure-checklist.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pokepayguide.top/articles/pokepay-fees-and-limits.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
