@@ -9,94 +9,144 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { background-color: #f8fafc; color: #334155; }
-    .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226, 232, 240, 0.6); }
-    .prose h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 2.5rem; margin-bottom: 1rem; }
-    .prose h3 { font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-top: 2rem; margin-bottom: 0.75rem; }
-    .prose p { margin-bottom: 1.25rem; line-height: 1.8; }
-    .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
-    .prose th { background: #f1f5f9; text-align: left; padding: 0.75rem; border: 1px solid #e2e8f0; font-weight: 600; }
-    .prose td { padding: 0.75rem; border: 1px solid #e2e8f0; }
+    .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
   </style>
 </head>
 <body class="font-sans pt-24 pb-24 md:pb-0">
 
-  <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 h-20 flex items-center">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3 group">
-        <div class="relative w-10 h-10 flex items-center justify-center bg-emerald-50 rounded-xl border border-emerald-100 group-hover:bg-emerald-100 transition shadow-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-6 h-6 object-contain"><rect width="100" height="100" rx="24" fill="#059669"/><path d="M35 25h15c15 0 20 5 20 15s-5 15-20 15h-5v20h-10V25z m10 22h5c8 0 10-2 10-7s-2-7-10-7h-5v14z" fill="white"/></svg>
-        </div>
-        <div class="flex flex-col"><span class="font-extrabold text-xl tracking-tight text-slate-900 leading-none">Pokepay<span class="text-emerald-600">Guide</span></span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">Unofficial Guide</span></div>
+  <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 h-20 flex items-center border-b border-slate-200/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="relative w-10 h-10 flex items-center justify-center bg-transparent group-hover:scale-105 transition-transform duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-10 h-10 drop-shadow-md"><rect width="100" height="100" rx="24" fill="#059669"/><path d="M35 25h15c15 0 20 5 20 15s-5 15-20 15h-5v20h-10V25z m10 22h5c8 0 10-2 10-7s-2-7-10-7h-5v14z" fill="white"/></svg>
+      </div>
+      <div class="flex flex-col"><span class="font-extrabold text-xl tracking-tight text-slate-900 leading-none">Pokepay<span class="text-emerald-600">Guide</span></span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">Unofficial Guide</span></div>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-bold text-slate-600">
+      <a href="/index.html#features" class="hover:text-emerald-600 transition">优势</a>
+      <a href="/index.html#tutorial" class="hover:text-emerald-600 transition">教程</a>
+      <a href="/index.html#okx-tutorial" class="hover:text-emerald-600 transition">充值</a>
+      <a href="/index.html#faq" class="hover:text-emerald-600 transition">问答</a>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <a href="/go/okx" target="_blank" class="text-sm font-bold text-slate-500 hover:text-emerald-600 transition flex items-center gap-1.5 px-2">
+        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span></span>
+        USDT买币
       </a>
-      <div class="hidden md:flex items-center gap-6 text-sm font-bold text-slate-600">
-        <a href="/" class="text-emerald-600">返回首页</a>
+      <a href="/go/pokepay" target="_blank" class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-full hover:bg-slate-800 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0">立即开卡</a>
+    </div>
+  </div>
+</nav>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="text-center mb-16">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Pokepay 靠谱吗？<br>会跑路吗？</h1>
+      <p class="text-lg text-slate-500">从牌照、资金托管、技术架构深度解析。更新于 2025.12.19</p>
+    </header>
+
+    <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 mb-12 text-center">
+      <p class="font-bold text-emerald-800 text-lg mb-2">🚀 测评结论：合规持牌，值得信赖</p>
+      <p class="text-emerald-700 text-sm">持有美/加/港多地金融牌照，非资金盘。适合长期使用，但依然建议“随充随用”，资金不宜大量闲置。</p>
+    </div>
+
+    <h2 class="text-2xl font-bold text-slate-900 mb-6">1. 硬核资质：金融牌照</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+      <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+        <div class="text-3xl mb-2">🇺🇸</div>
+        <div class="font-bold text-slate-800">美国 MSB</div>
+        <div class="text-xs text-slate-400">FinCEN 监管</div>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+        <div class="text-3xl mb-2">🇨🇦</div>
+        <div class="font-bold text-slate-800">加拿大 MSB</div>
+        <div class="text-xs text-slate-400">FINTRAC 监管</div>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+        <div class="text-3xl mb-2">🇭🇰</div>
+        <div class="font-bold text-slate-800">香港 MSO</div>
+        <div class="text-xs text-slate-400">海关总署监管</div>
       </div>
     </div>
-  </nav>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="flex flex-col lg:flex-row gap-12">
-      <main class="lg:w-3/4">
-        <header class="mb-10">
-          <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Pokepay 靠谱吗？会跑路吗？安全性深度评测</h1>
-          <div class="flex items-center gap-4 text-sm text-slate-500"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-xs font-bold">深度评测</span><span>更新于 2025.12.19</span></div>
-        </header>
-
-        <article class="prose max-w-none text-slate-600">
-          <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-8">
-            <p class="font-bold text-blue-800 mb-2 text-lg">🚀 结论：合规持牌，非资金盘</p>
-            <p class="text-blue-700 m-0 text-sm">Pokepay 持有美/加/港多地金融牌照，运营多年稳定，无跑路迹象。适合长期使用，但仍建议随充随用，资金不宜大量留存。</p>
-          </div>
-
-          <h2>1. 金融牌照与合规资质</h2>
-          <p>衡量一个虚拟卡平台是否“跑路风险低”，最硬的指标就是金融牌照。Pokepay 在这方面做得非常扎实：</p>
-          <table>
-            <thead><tr><th>地区</th><th>牌照类型</th><th>监管机构</th></tr></thead>
-            <tbody>
-              <tr><td>🇺🇸 美国</td><td>MSB 牌照</td><td>FinCEN</td></tr>
-              <tr><td>🇨🇦 加拿大</td><td>MSB 牌照</td><td>FINTRAC</td></tr>
-              <tr><td>🇭🇰 香港</td><td>MSO 牌照</td><td>海关总署</td></tr>
-            </tbody>
-          </table>
-
-          <h2>2. 资金安全机制</h2>
-          <ul>
-            <li><strong>资金隔离：</strong> 用户资金与平台运营资金隔离，专款专用。</li>
-            <li><strong>隐私保护：</strong> 严格的数据加密，不会泄露用户隐私给第三方。</li>
-          </ul>
-
-          <div class="mt-12 pt-8 border-t border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-6">推荐阅读</h3>
-            <div class="grid md:grid-cols-2 gap-4">
-              <a href="pokepay-virtual-card-guide.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
-                <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">💳 放心开卡</div>
-                <div class="text-xs text-slate-500">查看详细注册教程</div>
-              </a>
-              <a href="pokepay-fees-and-limits.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
-                <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">💰 费率透明吗？</div>
-                <div class="text-xs text-slate-500">查看详细收费标准</div>
-              </a>
-            </div>
-          </div>
-        </article>
-      </main>
-
-      <aside class="lg:w-1/4 relative hidden lg:block">
-        <div class="sticky top-28 space-y-6">
-          <div class="bg-white rounded-2xl p-6 shadow-xl shadow-slate-200/50 border border-slate-100 text-center">
-            <h3 class="font-bold text-slate-900 text-lg mb-2">安全开户</h3>
-            <p class="text-xs text-slate-500 mb-6">合规持牌，3分钟极速审核</p>
-            <a href="/go/pokepay" target="_blank" class="block w-full py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/20 mb-3">立即注册</a>
-          </div>
+    <h2 class="text-2xl font-bold text-slate-900 mb-6">2. 资金安全机制</h2>
+    <div class="space-y-4 mb-12">
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-xl">🛡️</div>
+        <div>
+          <h3 class="font-bold text-slate-800">资金隔离</h3>
+          <p class="text-sm text-slate-500">用户充值的 USDT 与平台运营资金物理隔离，专款专用，杜绝挪用风险。</p>
         </div>
-      </aside>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-xl">🔒</div>
+        <div>
+          <h3 class="font-bold text-slate-800">隐私保护</h3>
+          <p class="text-sm text-slate-500">严格的数据加密技术，符合国际隐私保护标准，不向第三方泄露用户实名信息。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-200 pt-12">
+      <h3 class="text-xl font-bold text-slate-900 mb-6">推荐阅读</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="/articles/pokepay-virtual-card-guide.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
+          <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">💳 放心开卡</div>
+          <div class="text-xs text-slate-500">查看详细注册教程</div>
+        </a>
+        <a href="/articles/pokepay-fees-and-limits.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
+          <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">💰 费率透明吗？</div>
+          <div class="text-xs text-slate-500">查看详细收费标准</div>
+        </a>
+      </div>
     </div>
   </div>
 
-  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs">
-      &copy; 2026 PokepayGuide.top. All rights reserved.
+  <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800 mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div class="space-y-6">
+        <div class="flex items-center gap-2 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-8 h-8 fill-current text-emerald-500"><rect width="100" height="100" rx="24" fill="currentColor"/><path d="M35 25h15c15 0 20 5 20 15s-5 15-20 15h-5v20h-10V25z m10 22h5c8 0 10-2 10-7s-2-7-10-7h-5v14z" fill="white"/></svg>
+          <span class="text-xl font-bold tracking-tight">Pokepay<span class="text-emerald-500">Guide</span></span>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">您的 Web3 跨境支付第一站。致力于解决 ChatGPT、OnlyFans 等海外订阅支付难题，连接加密资产与现实消费。</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-6">产品与服务</h4>
+        <ul class="space-y-4 text-sm">
+          <li><a href="/articles/pokepay-virtual-card-guide.html" class="hover:text-emerald-500 transition">Pokepay 虚拟卡</a></li>
+          <li><a href="/articles/pokepay-fees-and-limits.html" class="hover:text-emerald-500 transition">费率与限额</a></li>
+          <li><a href="/articles/okx-usdt-topup-trc20.html" class="hover:text-emerald-500 transition">USDT 充值</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-6">热门教程</h4>
+        <ul class="space-y-4 text-sm">
+          <li><a href="/articles/pokepay-bind-paypal-chatgpt.html" class="hover:text-emerald-500 transition">绑定 PayPal 教程</a></li>
+          <li><a href="/articles/pokepay-kaopu-ma.html" class="hover:text-emerald-500 transition">安全性深度评测</a></li>
+          <li><a href="/articles/subscription-failure-checklist.html" class="hover:text-emerald-500 transition">解决 Visa 支付被拒</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-6">合规声明</h4>
+        <div class="text-xs text-slate-500 space-y-4 leading-relaxed">
+          <p><strong class="text-slate-400">非官方指南：</strong>本站 (PokepayGuide.top) 为第三方测评与教程网站，非 Pokepay 官方运营。</p>
+          <p><strong class="text-slate-400">风险提示：</strong>加密资产属于高风险投资，请用户在充值和消费时注意资金安全。</p>
+        </div>
+      </div>
     </div>
-  </footer>
+    <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+      <div>&copy; 2026 PokepayGuide.top. All rights reserved.</div>
+      <div class="flex gap-6"><a href="/" class="hover:text-slate-400 transition">返回首页</a></div>
+    </div>
+  </div>
+</footer>
+
+  <div class="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-lg border-t border-slate-200 lg:hidden z-50 safe-area-bottom">
+    <div class="flex gap-3">
+      <a href="/go/okx" class="flex-1 flex items-center justify-center px-4 py-3 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm bg-white">USDT充值</a>
+      <a href="/go/pokepay" class="flex-1 flex items-center justify-center px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm shadow-lg">立即开卡</a>
+    </div>
+  </div>
 </body>
 </html>

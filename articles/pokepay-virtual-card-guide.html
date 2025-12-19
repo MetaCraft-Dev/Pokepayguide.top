@@ -10,121 +10,199 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { background-color: #f8fafc; color: #334155; }
-    .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226, 232, 240, 0.6); }
-    .prose h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 2.5rem; margin-bottom: 1rem; }
-    .prose h3 { font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-top: 2rem; margin-bottom: 0.75rem; }
-    .prose p { margin-bottom: 1.25rem; line-height: 1.8; }
-    .prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
-    .prose li { margin-bottom: 0.5rem; list-style: disc; }
+    .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
+    .step-card { transition: all 0.3s ease; }
+    .step-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
   </style>
 </head>
 <body class="font-sans pt-24 pb-24 md:pb-0">
 
-  <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 h-20 flex items-center">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3 group">
-        <div class="relative w-10 h-10 flex items-center justify-center bg-transparent group-hover:scale-105 transition-transform duration-200">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-10 h-10 drop-shadow-md"><rect width="100" height="100" rx="24" fill="#059669"/><path d="M35 25h15c15 0 20 5 20 15s-5 15-20 15h-5v20h-10V25z m10 22h5c8 0 10-2 10-7s-2-7-10-7h-5v14z" fill="white"/></svg>
-        </div>
-        <div class="flex flex-col"><span class="font-extrabold text-xl tracking-tight text-slate-900 leading-none">Pokepay<span class="text-emerald-600">Guide</span></span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">Unofficial Guide</span></div>
+  <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 h-20 flex items-center border-b border-slate-200/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="relative w-10 h-10 flex items-center justify-center bg-transparent group-hover:scale-105 transition-transform duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-10 h-10 drop-shadow-md"><rect width="100" height="100" rx="24" fill="#059669"/><path d="M35 25h15c15 0 20 5 20 15s-5 15-20 15h-5v20h-10V25z m10 22h5c8 0 10-2 10-7s-2-7-10-7h-5v14z" fill="white"/></svg>
+      </div>
+      <div class="flex flex-col"><span class="font-extrabold text-xl tracking-tight text-slate-900 leading-none">Pokepay<span class="text-emerald-600">Guide</span></span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">Unofficial Guide</span></div>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-bold text-slate-600">
+      <a href="/index.html#features" class="hover:text-emerald-600 transition">优势</a>
+      <a href="/index.html#tutorial" class="hover:text-emerald-600 transition">教程</a>
+      <a href="/index.html#okx-tutorial" class="hover:text-emerald-600 transition">充值</a>
+      <a href="/index.html#faq" class="hover:text-emerald-600 transition">问答</a>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <a href="/go/okx" target="_blank" class="text-sm font-bold text-slate-500 hover:text-emerald-600 transition flex items-center gap-1.5 px-2">
+        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span></span>
+        USDT买币
       </a>
-      <div class="hidden md:flex items-center gap-6 text-sm font-bold text-slate-600">
-        <a href="/" class="text-emerald-600">返回首页</a>
+      <a href="/go/pokepay" target="_blank" class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-full hover:bg-slate-800 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0">立即开卡</a>
+    </div>
+  </div>
+</nav>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="text-center mb-16">
+      <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">Pokepay 虚拟卡开卡<br><span class="text-emerald-600">全流程图文指南</span></h1>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto">从注册、充值到绑定支付宝/ChatGPT，一篇搞定。<br>更新于 <span class="font-mono bg-slate-100 px-2 py-1 rounded text-slate-600">2025.12.19</span></p>
+    </header>
+
+    <div class="mb-12">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg">1</div>
+        <h2 class="text-2xl font-bold text-slate-900">注册与认证 (KYC)</h2>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 step-card">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <p class="text-slate-600">Pokepay 是合规金融平台，注册需要完成实名认证。</p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> 准备好 <strong>身份证</strong> 或 <strong>护照</strong>。</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> 点击 <a href="/go/pokepay" target="_blank" class="text-emerald-600 font-bold underline">专属链接</a> 注册。</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> 填写邀请码 <code class="bg-slate-100 px-2 rounded font-bold text-slate-800">365888</code> 激活权益。</li>
+            </ul>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-4 flex flex-col justify-center items-center text-center border border-slate-100">
+            <div class="text-4xl mb-2">📸</div>
+            <p class="text-xs text-slate-500">按提示上传证件正反面 + 人脸识别<br>通常 2 分钟内自动审核通过</p>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="flex flex-col lg:flex-row gap-12">
-      <main class="lg:w-3/4">
-        <header class="mb-10">
-          <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Pokepay 虚拟卡开卡与绑定全流程指南</h1>
-          <div class="flex items-center gap-4 text-sm text-slate-500"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-xs font-bold">新手教程</span><span>更新于 2025.12.19</span></div>
-        </header>
-
-        <article class="prose max-w-none text-slate-600">
-          <div class="bg-amber-50 border border-amber-100 rounded-xl p-5 mb-8 text-sm text-amber-800">
-            <strong>💡 核心提示：</strong> 整个流程大约需要 5-10 分钟。请提前准备好身份证/护照（用于KYC）和 USDT（用于充值）。
+    <div class="mb-12">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg">2</div>
+        <h2 class="text-2xl font-bold text-slate-900">充值 USDT</h2>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 step-card">
+        <p class="text-slate-600 mb-4">Pokepay 不支持国内银行卡直充，必须使用 USDT (TRC20网络)。</p>
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="flex-1 bg-blue-50 p-4 rounded-xl border border-blue-100">
+            <h3 class="font-bold text-blue-800 mb-2">A. 获取地址</h3>
+            <p class="text-sm text-blue-600">App 首页点击“充值” -> 选择 <strong>USDT</strong> -> 选择 <strong>TRC20</strong> -> 复制地址。</p>
           </div>
-
-          <h2>一、开卡前准备</h2>
-          <ul>
-            <li><strong>注册账户：</strong> 点击 <a href="/go/pokepay" target="_blank" class="text-emerald-600 font-bold underline">专属链接</a> 注册，填写邀请码 <code>365888</code> 可激活优惠权益。</li>
-            <li><strong>身份认证 (KYC)：</strong> 登录后上传身份证或护照。这是合规必须步骤，通常 2 分钟自动通过。</li>
-            <li><strong>资金准备：</strong> 建议准备至少 <strong>25 USDT</strong>（开卡费 + 最低充值额）。</li>
-          </ul>
-
-          <h2>二、USDT 充值 (TRC20)</h2>
-          <p>Pokepay 不支持直接绑定国内银行卡充值，必须使用 USDT。</p>
-          <ol class="list-decimal pl-5 space-y-2">
-            <li>在 Pokepay 首页点击 <strong>“充值”</strong>。</li>
-            <li>选择 <strong>USDT</strong> -> 网络选择 <strong>TRC20</strong> (手续费最便宜)。</li>
-            <li>复制显示的充值地址（T 开头的一串代码）。</li>
-            <li>打开你的交易所（如 <a href="/go/okx" target="_blank" class="text-emerald-600 underline">欧易 OKX</a>），选择“提币”，粘贴地址并转账。</li>
-            <li>等待约 3-5 分钟，链上确认后资金会自动到账。</li>
-          </ol>
-
-          <h2>三、申请虚拟卡</h2>
-          <p>资金到账后，即可申请卡片。目前推荐申请以下卡段，针对 AI 订阅通过率最高：</p>
-          <div class="grid grid-cols-2 gap-4 my-4">
-            <div class="p-4 bg-white border border-slate-200 rounded-lg text-center">
-              <div class="font-bold text-lg text-slate-900">5347 卡段</div>
-              <div class="text-xs text-green-600 mt-1">ChatGPT / Midjourney 首选</div>
-            </div>
-            <div class="p-4 bg-white border border-slate-200 rounded-lg text-center">
-              <div class="font-bold text-lg text-slate-900">4866 卡段</div>
-              <div class="text-xs text-blue-600 mt-1">Netflix / Apple ID 首选</div>
-            </div>
-          </div>
-          <p>点击“申请卡片”，选择对应卡头，支付开卡费（通常 $5-$10），即可瞬间获得卡号、有效期和 CVV。</p>
-
-          <h2>四、绑定 ChatGPT Plus 实战</h2>
-          <ol class="list-decimal pl-5 space-y-2">
-            <li><strong>环境准备：</strong> 开启全局代理，节点选美国（避开纽约州，建议选免税州如 Oregon）。</li>
-            <li><strong>浏览器：</strong> 使用 Chrome 无痕模式登录 OpenAI。</li>
-            <li><strong>填写卡号：</strong> 将 Pokepay 上的卡号、有效期、CVV 填入。</li>
-            <li><strong>账单地址 (关键)：</strong> 找一个美国免税州的真实地址生成器填写。地址必须真实存在。</li>
-            <li><strong>点击订阅：</strong> 只要余额充足（大于 $20），通常秒过。</li>
-          </ol>
-
-          <div class="mt-12 pt-8 border-t border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-6">推荐阅读</h3>
-            <div class="grid md:grid-cols-2 gap-4">
-              <a href="subscription-failure-checklist.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
-                <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">🚫 支付被拒怎么办？</div>
-                <div class="text-xs text-slate-500">排查清单：解决 Your card has been declined</div>
-              </a>
-              <a href="okx-usdt-topup-trc20.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
-                <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">₮ 怎么充值？</div>
-                <div class="text-xs text-slate-500">欧易 OKX 买币与提币保姆级教程</div>
-              </a>
-            </div>
-          </div>
-        </article>
-      </main>
-
-      <aside class="lg:w-1/4 relative hidden lg:block">
-        <div class="sticky top-28 space-y-6">
-          <div class="bg-white rounded-2xl p-6 shadow-xl shadow-slate-200/50 border border-slate-100 text-center">
-            <h3 class="font-bold text-slate-900 text-lg mb-2">立即开卡</h3>
-            <p class="text-xs text-slate-500 mb-6">3分钟解锁 ChatGPT 支付</p>
-            <a href="/go/pokepay" target="_blank" class="block w-full py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/20 mb-3">前往注册</a>
-            <div class="text-[10px] text-slate-500 bg-slate-50 py-1 rounded border border-slate-100">邀请码: <span class="text-emerald-600 font-bold select-all">365888</span></div>
-          </div>
-          <div class="bg-slate-900 rounded-2xl p-6 shadow-xl text-center text-white">
-            <h3 class="font-bold text-white text-lg mb-2">USDT 充值</h3>
-            <p class="text-xs text-slate-400 mb-6">没有 USDT？查看买币教程</p>
-            <a href="/go/okx" target="_blank" class="block w-full py-3 bg-white/10 border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition">教程与买币</a>
+          <div class="flex-1 bg-slate-50 p-4 rounded-xl border border-slate-100">
+            <h3 class="font-bold text-slate-800 mb-2">B. 交易所提币</h3>
+            <p class="text-sm text-slate-600">前往 <a href="/go/okx" target="_blank" class="underline">欧易 OKX</a>，选择“提币” -> 粘贴地址 -> 确认转账。</p>
           </div>
         </div>
-      </aside>
+        <div class="mt-4 text-xs text-slate-400 text-center">💡 建议首次充值 25-30 USDT 以覆盖开卡费。</div>
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-lg">3</div>
+        <h2 class="text-2xl font-bold text-slate-900">申请虚拟卡</h2>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 step-card">
+        <p class="text-slate-600 mb-6">资金到账后，点击首页“申请卡片”。推荐以下两个神级卡段：</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border border-emerald-200 bg-emerald-50/50 p-4 rounded-xl text-center">
+            <div class="text-2xl font-bold text-slate-800 mb-1">5347 卡段</div>
+            <div class="text-xs font-bold text-emerald-600 uppercase tracking-wide">AI 订阅首选</div>
+            <p class="text-xs text-slate-500 mt-2">ChatGPT Plus, Midjourney, Claude 通过率极高。</p>
+          </div>
+          <div class="border border-blue-200 bg-blue-50/50 p-4 rounded-xl text-center">
+            <div class="text-2xl font-bold text-slate-800 mb-1">4866 卡段</div>
+            <div class="text-xs font-bold text-blue-600 uppercase tracking-wide">娱乐与消费</div>
+            <p class="text-xs text-slate-500 mt-2">Netflix, Apple ID, 支付宝绑定首选。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-16">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold text-lg">4</div>
+        <h2 class="text-2xl font-bold text-slate-900">绑定支付宝/微信</h2>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 step-card">
+        <p class="text-slate-600 mb-4">拿到卡号后，即可绑定国内支付软件，实现<strong>USDT ➔ 人民币消费</strong>。</p>
+        <ul class="space-y-2 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl">
+          <li class="flex gap-2"><span>①</span> 打开支付宝/微信 -> 钱包 -> 银行卡 -> 添加境外卡。</li>
+          <li class="flex gap-2"><span>②</span> 输入卡号、有效期、CVV（在 Pokepay App 查看）。</li>
+          <li class="flex gap-2"><span>③</span> <strong>免手续费技巧：</strong> 单笔消费 <strong>≤ 200 元</strong> 免收 3% 国际卡手续费。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-200 pt-12">
+      <h3 class="text-xl font-bold text-slate-900 mb-6">推荐阅读</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="/articles/pokepay-bind-paypal-chatgpt.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
+          <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">🔥 高阶：绑定 PayPal 教程</div>
+          <div class="text-xs text-slate-500">曲线救国订阅 ChatGPT，稳如老狗</div>
+        </a>
+        <a href="/articles/okx-usdt-topup-trc20.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
+          <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">₮ USDT 充值详解</div>
+          <div class="text-xs text-slate-500">解决“怎么买币”的问题</div>
+        </a>
+      </div>
     </div>
   </div>
 
-  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs">
-      &copy; 2026 PokepayGuide.top. All rights reserved.
+  <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800 mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div class="space-y-6">
+        <div class="flex items-center gap-2 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-8 h-8 fill-current text-emerald-500"><rect width="100" height="100" rx="24" fill="currentColor"/><path d="M35 25h15c15 0 20 5 20 15s-5 15-20 15h-5v20h-10V25z m10 22h5c8 0 10-2 10-7s-2-7-10-7h-5v14z" fill="white"/></svg>
+          <span class="text-xl font-bold tracking-tight">Pokepay<span class="text-emerald-500">Guide</span></span>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">您的 Web3 跨境支付第一站。致力于解决 ChatGPT、OnlyFans 等海外订阅支付难题，连接加密资产与现实消费。</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-6">产品与服务</h4>
+        <ul class="space-y-4 text-sm">
+          <li><a href="/articles/pokepay-virtual-card-guide.html" class="hover:text-emerald-500 transition">Pokepay 虚拟卡</a></li>
+          <li><a href="/articles/pokepay-fees-and-limits.html" class="hover:text-emerald-500 transition">费率与限额</a></li>
+          <li><a href="/articles/okx-usdt-topup-trc20.html" class="hover:text-emerald-500 transition">USDT 充值</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-6">热门教程</h4>
+        <ul class="space-y-4 text-sm">
+          <li><a href="/articles/pokepay-bind-paypal-chatgpt.html" class="hover:text-emerald-500 transition">绑定 PayPal 教程</a></li>
+          <li><a href="/articles/pokepay-kaopu-ma.html" class="hover:text-emerald-500 transition">安全性深度评测</a></li>
+          <li><a href="/articles/subscription-failure-checklist.html" class="hover:text-emerald-500 transition">解决 Visa 支付被拒</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-6">合规声明</h4>
+        <div class="text-xs text-slate-500 space-y-4 leading-relaxed">
+          <p><strong class="text-slate-400">非官方指南：</strong>本站 (PokepayGuide.top) 为第三方测评与教程网站，非 Pokepay 官方运营。</p>
+          <p><strong class="text-slate-400">风险提示：</strong>加密资产属于高风险投资，请用户在充值和消费时注意资金安全。</p>
+        </div>
+      </div>
     </div>
-  </footer>
+    <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+      <div>&copy; 2026 PokepayGuide.top. All rights reserved.</div>
+      <div class="flex gap-6"><a href="/" class="hover:text-slate-400 transition">返回首页</a></div>
+    </div>
+  </div>
+</footer>
+
+  <div class="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-lg border-t border-slate-200 lg:hidden z-50 safe-area-bottom">
+    <div class="flex gap-3">
+      <a href="/go/okx" class="flex-1 flex items-center justify-center px-4 py-3 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm bg-white">USDT充值</a>
+      <a href="/go/pokepay" class="flex-1 flex items-center justify-center px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm shadow-lg">立即开卡</a>
+    </div>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Pokepay虚拟卡开卡全流程",
+    "step": [
+      {"@type": "HowToStep", "name": "注册账户", "text": "使用手机号注册并填写邀请码365888"},
+      {"@type": "HowToStep", "name": "KYC认证", "text": "上传身份证或护照完成实名"},
+      {"@type": "HowToStep", "name": "充值USDT", "text": "通过TRC20网络充值至少25 USDT"},
+      {"@type": "HowToStep", "name": "申请卡片", "text": "选择5347或4866卡段开卡"}
+    ]
+  }
+  </script>
 </body>
 </html>

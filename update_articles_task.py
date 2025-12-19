@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pokepay/ChatGPT订阅扣费失败排查清单｜Card Declined 解决方法</title>
-  <meta name="description" content="遇到Your card has been declined？Pokepay订阅ChatGPT、OnlyFans失败怎么办？从余额、IP节点、账单地址三个维度快速排查，提高支付成功率。">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23059669%22/><path d=%22M35 25h15c15 0 20 5 20 15s-5 15-20 15h-5v20h-10V25z m10 22h5c8 0 10-2 10-7s-2-7-10-7h-5v14z%22 fill=%22white%22/></svg>">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { background-color: #f8fafc; color: #334155; }
-    .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
-  </style>
-</head>
-<body class="font-sans pt-24 pb-24 md:pb-0">
+import os
+import re
 
-  <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 h-20 flex items-center border-b border-slate-200/60">
+# Configuration
+PROJECT_ROOT = '/Users/xiaxingyu/Desktop/网站项目/PokePay'
+ARTICLES_DIR = os.path.join(PROJECT_ROOT, 'articles')
+
+# The new navigation HTML
+NEW_NAV = """<nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 h-20 flex items-center border-b border-slate-200/60">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
     <a href="/" class="flex items-center gap-3 group">
       <div class="relative w-10 h-10 flex items-center justify-center bg-transparent group-hover:scale-105 transition-transform duration-200">
@@ -36,50 +28,10 @@
       <a href="/go/pokepay" target="_blank" class="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-full hover:bg-slate-800 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0">立即开卡</a>
     </div>
   </div>
-</nav>
+</nav>"""
 
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <header class="text-center mb-16">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">支付失败？<br><span class="text-red-600">Card Declined 终极排查</span></h1>
-      <p class="text-lg text-slate-500">遇到报错不要慌，90% 的问题都在这里。更新于 2025.12.19</p>
-    </header>
-
-    <div class="space-y-6 mb-12">
-      <div class="bg-white border-l-4 border-red-500 rounded-r-xl p-6 shadow-sm">
-        <h2 class="text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">🔴 原因一：余额不足 (最常见)</h2>
-        <p class="text-slate-600 text-sm">很多平台（如 OpenAI、Google Cloud）在绑定卡片时会进行 <strong>$1 - $5 的预扣款验证</strong>。</p>
-        <div class="mt-4 bg-red-50 text-red-700 text-sm p-3 rounded font-bold">✅ 解决方案：保持卡内余额比订阅费多 $10 左右。</div>
-      </div>
-
-      <div class="bg-white border-l-4 border-orange-500 rounded-r-xl p-6 shadow-sm">
-        <h2 class="text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">🟠 原因二：IP 环境不干净</h2>
-        <p class="text-slate-600 text-sm">支付风控最看重 IP。如果使用“万人骑”的公共节点，极大概率被拒。</p>
-        <div class="mt-4 bg-orange-50 text-orange-700 text-sm p-3 rounded font-bold">✅ 解决方案：切换到美国原生 IP 节点，开启全局代理。</div>
-      </div>
-
-      <div class="bg-white border-l-4 border-blue-500 rounded-r-xl p-6 shadow-sm">
-        <h2 class="text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">🔵 原因三：账单地址错误</h2>
-        <p class="text-slate-600 text-sm">虽然虚拟卡不强制验证地址，但 Zip Code (邮编) 必须与州对应。</p>
-        <div class="mt-4 bg-blue-50 text-blue-700 text-sm p-3 rounded font-bold">✅ 解决方案：使用美国地址生成器，找一个免税州 (Oregon) 的真实地址。</div>
-      </div>
-    </div>
-
-    <div class="border-t border-slate-200 pt-12">
-      <h3 class="text-xl font-bold text-slate-900 mb-6">推荐阅读</h3>
-      <div class="grid md:grid-cols-2 gap-4">
-        <a href="/articles/pokepay-virtual-card-guide.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
-          <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">💳 虚拟卡开卡指南</div>
-          <div class="text-xs text-slate-500">详细步骤图解，新手必看</div>
-        </a>
-        <a href="/articles/okx-usdt-topup-trc20.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
-          <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">₮ USDT 充值教程</div>
-          <div class="text-xs text-slate-500">解决入金问题，安全快速</div>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800 mt-20">
+# The new footer HTML
+NEW_FOOTER = """<footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800 mt-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
       <div class="space-y-6">
@@ -118,13 +70,59 @@
       <div class="flex gap-6"><a href="/" class="hover:text-slate-400 transition">返回首页</a></div>
     </div>
   </div>
-</footer>
+</footer>"""
 
-  <div class="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-lg border-t border-slate-200 lg:hidden z-50 safe-area-bottom">
+# The mobile bottom bar HTML to check/insert
+MOBILE_BAR = """<div class="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-lg border-t border-slate-200 lg:hidden z-50 safe-area-bottom">
     <div class="flex gap-3">
       <a href="/go/okx" class="flex-1 flex items-center justify-center px-4 py-3 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm bg-white">USDT充值</a>
-      <a href="/go/pokepay" class="flex-1 flex items-center justify-center px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm shadow-lg">立即开卡</a>
+      <a href="/go/pokepay" class="flex-1 flex items-center justify-center px-4 py-3 rounded-xl bg-brand-600 text-white font-bold text-sm shadow-lg">立即开卡</a>
     </div>
-  </div>
-</body>
-</html>
+  </div>"""
+
+def read_file(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        return f.read()
+
+def write_file(path, content):
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+def update_articles():
+    print(f"Processing articles in {ARTICLES_DIR}...")
+    for filename in os.listdir(ARTICLES_DIR):
+        if not filename.endswith('.html'):
+            continue
+            
+        file_path = os.path.join(ARTICLES_DIR, filename)
+        print(f"  Updating {filename}...")
+        
+        content = read_file(file_path)
+        
+        # 1. Replace Nav
+        if '<nav' in content:
+            content = re.sub(r'<nav.*?</nav>', NEW_NAV, content, flags=re.DOTALL)
+        else:
+            print(f"    Warning: No <nav> found in {filename}, inserting...")
+            content = content.replace('<body class="font-sans pt-24 pb-24 md:pb-0">', f'<body class="font-sans pt-24 pb-24 md:pb-0">\n{NEW_NAV}', 1)
+
+        # 2. Replace Footer
+        if '<footer' in content:
+            content = re.sub(r'<footer.*?</footer>', NEW_FOOTER, content, flags=re.DOTALL)
+        else:
+            print(f"    Warning: No <footer> found in {filename}, inserting...")
+            content = content.replace('</body>', f'{NEW_FOOTER}\n</body>')
+
+        # 3. Ensure Mobile Bar exists
+        # Use a simple check for "fixed bottom-0" which is characteristic of the bar
+        if 'fixed bottom-0' not in content:
+            print(f"    Adding mobile bar to {filename}...")
+            # Insert before </body>
+            content = content.replace('</body>', f'{MOBILE_BAR}\n</body>')
+        
+        write_file(file_path, content)
+
+    print("Batch update completed.")
+
+if __name__ == '__main__':
+    update_articles()
