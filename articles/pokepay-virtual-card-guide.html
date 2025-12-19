@@ -1,111 +1,148 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pokepay虚拟卡开卡与绑定全流程指南｜ChatGPT / Midjourney / Apple ID</title>
   <meta name="description" content="Pokepay虚拟卡完整教程：注册、KYC、开卡、USDT TRC20 充值与在 ChatGPT、Midjourney、Apple ID 的绑定与订阅扣费，附常见问题排查与成功率提升技巧。">
-  <meta name="keywords" content="Pokepay虚拟卡, 跨境支付, 虚拟信用卡, 订阅扣费, Apple ID 充值, ChatGPT 充值, Midjourney 绑定卡, Pokepay充值">
-  <meta property="og:title" content="Pokepay虚拟卡开卡与绑定全流程指南">
-  <meta property="og:description" content="注册/KYC/开卡/USDT充值与绑定 ChatGPT、Midjourney、Apple ID 的完整流程与排查清单">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="https://www.pokepay.cc/images/logo.png">
-  <link rel="icon" href="https://www.pokepay.cc/images/logo.png">
-  <link rel="canonical" href="https://pokepayguide.top/articles/pokepay-virtual-card-guide.html">
-  <meta property="og:site_name" content="Pokepay指南">
-  <link rel="alternate" hreflang="zh-cn" href="https://pokepayguide.top/articles/pokepay-virtual-card-guide.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23059669%22/><path d=%22M35 25h15c15 0 20 5 20 15s-5 15-20 15h-5v20h-10V25z m10 22h5c8 0 10-2 10-7s-2-7-10-7h-5v14z%22 fill=%22white%22/></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { --brand1:#22c55e; --brand2:#16a34a; --border:#e5e7eb; --text:#0f172a; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; color:var(--text); background:#f8fafc; }
-    .container { max-width: 860px; margin: 0 auto; padding: 20px; }
-    h1 { font-size: 32px; margin: 12px 0 8px; }
-    h2 { font-size: 22px; margin: 22px 0 10px; }
-    h3 { font-size: 18px; margin: 16px 0 8px; }
-    p { line-height: 1.7; }
-    .card { background:#fff; border:1px solid var(--border); border-radius:14px; padding:18px; }
-    .cta { display:inline-flex; align-items:center; gap:10px; font-weight:600; color:#fff; background-image:linear-gradient(90deg,var(--brand1),var(--brand2)); border-radius:12px; padding:12px 18px; text-decoration:none; }
-    .grid { display:grid; grid-template-columns:1fr; gap:12px; }
-    .note { font-size:13px; color:#334155; }
-    @media (max-width:640px){ h1{font-size:26px;} }
+    body { background-color: #f8fafc; color: #334155; }
+    .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226, 232, 240, 0.6); }
+    .prose h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .prose h3 { font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose p { margin-bottom: 1.25rem; line-height: 1.8; }
+    .prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .prose li { margin-bottom: 0.5rem; list-style: disc; }
   </style>
 </head>
-<body>
-  <main class="container">
-    <h1>Pokepay虚拟卡开卡与绑定全流程</h1>
-    <p class="note">本指南适用于跨境支付与订阅扣费场景，覆盖 ChatGPT、Midjourney、Apple ID 等平台的绑定与使用。</p>
-    <p><a class="cta" href="https://pokepayguide.top" aria-label="返回首页">👉 返回首页</a></p>
+<body class="font-sans pt-20 pb-24 md:pb-0">
 
-    <section class="card">
-      <h2>一、开卡准备</h2>
-      <div class="grid">
-        <div>
-          <h3>注册与 KYC</h3>
-          <p>通过推荐渠道完成注册并完成 KYC，确保账户合规。</p>
-          <p><a class="cta" href="https://app.pokepay.cc/pages/invitation/regist?r=365888" target="_blank" rel="noopener noreferrer">👉 立即注册（推荐渠道）</a></p>
+  <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 h-20 flex items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="relative w-10 h-10 flex items-center justify-center bg-emerald-50 rounded-xl border border-emerald-100 group-hover:bg-emerald-100 transition shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-6 h-6 object-contain"><rect width="100" height="100" rx="24" fill="#059669"/><path d="M35 25h15c15 0 20 5 20 15s-5 15-20 15h-5v20h-10V25z m10 22h5c8 0 10-2 10-7s-2-7-10-7h-5v14z" fill="white"/></svg>
         </div>
-        <div>
-          <h3>USDT TRC20 充值</h3>
-          <p>在欧易渠道获取 USDT 并通过 TRC20 网络充值，通常数分钟内完成入账。</p>
-          <p><a class="cta" href="https://www.bawebgrouyx.com/join?channelId=ACE529411" target="_blank" rel="noopener noreferrer">👉 欧易渠道 USDT 入口</a></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>二、在主流平台进行绑定</h2>
-      <h3>ChatGPT</h3>
-      <p>进入账户付费页，使用 Pokepay虚拟卡完成绑定与订阅扣费。</p>
-      <h3>Midjourney</h3>
-      <p>在官网或 Discord 的订阅入口进行扣费，确保卡片余额与账单信息正确。</p>
-      <h3>Apple ID</h3>
-      <p>在账户支付方式添加虚拟卡信息，完成 Apple ID 充值或订阅。</p>
-    </section>
-
-    <section class="card">
-      <h2>三、常见问题排查</h2>
-      <h3>扣费失败</h3>
-      <p>检查余额、卡片状态与账单地址；确保安全信息填写正确，必要时更换扣费通道。</p>
-      <h3>退款时效</h3>
-      <p>普通商户退款通常 3-7 个工作日；大额交易约 7-14 天；在线支付平台约 3-10 天；跨境交易可能需 7-30 天；争议退款通常需 30-90 天。</p>
-    </section>
-
-    <section class="card">
-      <h2>四、快速开始</h2>
-      <p><a class="cta" href="https://app.pokepay.cc/pages/invitation/regist?r=365888" target="_blank" rel="noopener noreferrer">👉 立即开通 Pokepay 账号</a></p>
-      <p><a class="cta" href="https://www.bawebgrouyx.com/join?channelId=ACE529411" target="_blank" rel="noopener noreferrer">👉 USDT 充值入口（欧易渠道）</a></p>
-    </section>
-  </main>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Pokepay虚拟卡开卡与绑定全流程",
-    "description": "注册、KYC、开卡、USDT TRC20 充值与在 ChatGPT、Midjourney、Apple ID 的绑定与订阅扣费，附排查清单。",
-    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pokepayguide.top/articles/pokepay-virtual-card-guide.html"},
-    "author": {"@type": "Organization", "name": "Pokepay指南"},
-    "image": "https://www.pokepay.cc/images/logo.png",
-    "datePublished": "2025-12-04",
-    "dateModified": "2025-12-04"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://pokepayguide.top/"},
-      {"@type": "ListItem", "position": 2, "name": "精选指南与教学", "item": "https://pokepayguide.top/#articles"},
-      {"@type": "ListItem", "position": 3, "name": "虚拟卡开卡与绑定全流程", "item": "https://pokepayguide.top/articles/pokepay-virtual-card-guide.html"}
-    ]
-  }
-  </script>
-
-  <section class="container" style="padding-bottom:40px;">
-    <div class="card">
-      <h2>相关推荐</h2>
-      <p><a href="/articles/okx-usdt-topup-trc20.html">欧易 OKX USDT TRC20 充值教程</a> · <a href="/articles/subscription-failure-checklist.html">订阅扣费失败排查清单</a> · <a href="/#get-started">返回首页并开始使用</a></p>
+        <div class="flex flex-col"><span class="font-extrabold text-xl tracking-tight text-slate-900 leading-none">Pokepay<span class="text-emerald-600">Guide</span></span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">Unofficial Guide</span></div>
+      </a>
+      <div class="hidden md:flex items-center gap-4"><a href="/" class="text-sm font-bold text-slate-600 hover:text-emerald-600 transition">返回首页</a></div>
     </div>
-  </section>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col lg:flex-row gap-12">
+      <main class="lg:w-3/4">
+        <header class="mb-10">
+          <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">Pokepay 虚拟卡开卡与绑定全流程指南</h1>
+          <div class="flex items-center gap-4 text-sm text-slate-500"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-xs font-bold">新手教程</span><span>更新于 2026.01</span></div>
+        </header>
+
+        <article class="prose max-w-none text-slate-600">
+          <div class="bg-amber-50 border border-amber-100 rounded-xl p-5 mb-8 text-sm text-amber-800">
+            <strong>💡 核心提示：</strong> 整个流程大约需要 5-10 分钟。请提前准备好身份证/护照（用于KYC）和 USDT（用于充值）。
+          </div>
+
+          <h2>一、开卡前准备</h2>
+          <ul>
+            <li><strong>注册账户：</strong> 点击 <a href="/go/pokepay" target="_blank" class="text-emerald-600 font-bold underline">专属链接</a> 注册，填写邀请码 <code>365888</code> 可激活优惠权益。</li>
+            <li><strong>身份认证 (KYC)：</strong> 登录后上传身份证或护照。这是合规必须步骤，通常 2 分钟自动通过。</li>
+            <li><strong>资金准备：</strong> 建议准备至少 <strong>25 USDT</strong>（开卡费 + 最低充值额）。</li>
+          </ul>
+
+          <h2>二、USDT 充值 (TRC20)</h2>
+          <p>Pokepay 不支持直接绑定国内银行卡充值，必须使用 USDT。</p>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>在 Pokepay 首页点击 <strong>“充值”</strong>。</li>
+            <li>选择 <strong>USDT</strong> -> 网络选择 <strong>TRC20</strong> (手续费最便宜)。</li>
+            <li>复制显示的充值地址（T 开头的一串代码）。</li>
+            <li>打开你的交易所（如 <a href="/go/okx" target="_blank" class="text-emerald-600 underline">欧易 OKX</a>），选择“提币”，粘贴地址并转账。</li>
+            <li>等待约 3-5 分钟，链上确认后资金会自动到账。</li>
+          </ol>
+
+          <h2>三、申请虚拟卡</h2>
+          <p>资金到账后，即可申请卡片。目前推荐申请以下卡段，针对 AI 订阅通过率最高：</p>
+          <div class="grid grid-cols-2 gap-4 my-4">
+            <div class="p-4 bg-white border border-slate-200 rounded-lg text-center">
+              <div class="font-bold text-lg text-slate-900">5347 卡段</div>
+              <div class="text-xs text-green-600 mt-1">ChatGPT / Midjourney 首选</div>
+            </div>
+            <div class="p-4 bg-white border border-slate-200 rounded-lg text-center">
+              <div class="font-bold text-lg text-slate-900">4866 卡段</div>
+              <div class="text-xs text-blue-600 mt-1">Netflix / Apple ID 首选</div>
+            </div>
+          </div>
+          <p>点击“申请卡片”，选择对应卡头，支付开卡费（通常 $5-$10），即可瞬间获得卡号、有效期和 CVV。</p>
+
+          <h2>四、绑定 ChatGPT Plus 实战</h2>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li><strong>环境准备：</strong> 开启全局代理，节点选美国（避开纽约州，建议选免税州如 Oregon）。</li>
+            <li><strong>浏览器：</strong> 使用 Chrome 无痕模式登录 OpenAI。</li>
+            <li><strong>填写卡号：</strong> 将 Pokepay 上的卡号、有效期、CVV 填入。</li>
+            <li><strong>账单地址 (关键)：</strong> 找一个美国免税州的真实地址生成器填写。地址必须真实存在。</li>
+            <li><strong>点击订阅：</strong> 只要余额充足（大于 $20），通常秒过。</li>
+          </ol>
+
+          <div class="bg-red-50 border border-red-100 rounded-xl p-5 mt-8 text-sm text-red-800">
+            <strong>🚫 绑定失败怎么办？</strong><br>
+            如果提示 "Your card has been declined"，通常是 IP 不干净。请更换节点（尝试新加坡/台湾节点），或者更换浏览器指纹后再试。不要短时间内连续失败超过 3 次。
+          </div>
+
+          <div class="mt-12 pt-8 border-t border-slate-200">
+            <h3 class="text-xl font-bold text-slate-900 mb-6">相关指南</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <a href="subscription-failure-checklist.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
+                <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">🚫 支付失败？排查清单</div>
+                <div class="text-xs text-slate-500">解决 Your card has been declined 问题</div>
+              </a>
+              <a href="okx-usdt-topup-trc20.html" class="block p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition bg-white group">
+                <div class="font-bold text-slate-900 mb-1 group-hover:text-emerald-600">₮ 充值不到账怎么办？</div>
+                <div class="text-xs text-slate-500">查看 OKX 充值标准教程</div>
+              </a>
+            </div>
+          </div>
+        </article>
+      </main>
+
+      <aside class="lg:w-1/4 relative hidden lg:block">
+        <div class="sticky top-28 space-y-6">
+          <div class="bg-white rounded-2xl p-6 shadow-xl shadow-slate-200/50 border border-slate-100 text-center">
+            <h3 class="font-bold text-slate-900 text-lg mb-2">立即开卡</h3>
+            <p class="text-xs text-slate-500 mb-6">3分钟解锁 ChatGPT 支付</p>
+            <a href="/go/pokepay" target="_blank" class="block w-full py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/20 mb-3">前往注册</a>
+            <div class="text-[10px] text-slate-500 bg-slate-50 py-1 rounded border border-slate-100">邀请码: <span class="text-emerald-600 font-bold select-all">365888</span></div>
+          </div>
+          <div class="bg-slate-900 rounded-2xl p-6 shadow-xl text-center text-white">
+            <h3 class="font-bold text-white text-lg mb-2">USDT 充值</h3>
+            <p class="text-xs text-slate-400 mb-6">没有 U？去欧易买币</p>
+            <a href="/go/okx" target="_blank" class="block w-full py-3 bg-white/10 border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition">教程与买币</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 text-white font-bold text-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-6 h-6 fill-current text-emerald-500"><rect width="100" height="100" rx="24" fill="currentColor"/><path d="M35 25h15c15 0 20 5 20 15s-5 15-20 15h-5v20h-10V25z m10 22h5c8 0 10-2 10-7s-2-7-10-7h-5v14z" fill="white"/></svg> PokepayGuide</div>
+          <p class="text-xs text-slate-500">非官方指南。致力于解决 Web3 支付难题。</p>
+        </div>
+        <div><h4 class="text-white font-bold mb-4">产品</h4><ul class="space-y-2"><li><a href="pokepay-virtual-card-guide.html" class="hover:text-emerald-500">虚拟卡开卡</a></li><li><a href="pokepay-fees-and-limits.html" class="hover:text-emerald-500">费率与限额</a></li></ul></div>
+        <div><h4 class="text-white font-bold mb-4">教程</h4><ul class="space-y-2"><li><a href="okx-usdt-topup-trc20.html" class="hover:text-emerald-500">USDT 充值</a></li><li><a href="subscription-failure-checklist.html" class="hover:text-emerald-500">支付失败排查</a></li></ul></div>
+        <div><h4 class="text-white font-bold mb-4">评测</h4><ul class="space-y-2"><li><a href="pokepay-kaopu-ma.html" class="hover:text-emerald-500">安全性分析</a></li></ul></div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-600">&copy; 2026 PokepayGuide.top. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-lg border-t border-slate-200 lg:hidden z-50 safe-area-bottom">
+    <div class="flex gap-3">
+      <a href="/go/okx" class="flex-1 flex items-center justify-center px-4 py-3 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm bg-white">USDT充值</a>
+      <a href="/go/pokepay" class="flex-1 flex items-center justify-center px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm shadow-lg">立即开卡</a>
+    </div>
+  </div>
 </body>
 </html>
